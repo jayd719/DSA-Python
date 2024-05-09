@@ -68,8 +68,9 @@ def seleticonSort(arr):
             j+=1
         arr[i],arr[minIndex] = arr[minIndex],arr[i]
         i+=1
+        
 
 for test in testCases:
     print(f'Before:\t{test}')
     seleticonSort(test)
-    print(f'After:\t{mergeSort(test)}\n\n')        
+    print(f'After:{test}\t\n\n')        
