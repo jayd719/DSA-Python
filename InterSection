@@ -1,0 +1,40 @@
+ar1= [1,5,10,20,40,80] 
+ar2 = [6, 7, 20, 80, 100] 
+ar3 = [3, 4, 15, 20, 30, 70, 80, 120] 
+
+
+#time complexity = O(N)
+# space complexity = O(n)
+def method1():
+    ref =[]
+    final=[]
+    for i in ar1:
+        if i in ar2:
+            ref.append(i)
+
+    for r in ref:
+        if r in ar3:
+            final.append(r)
+        
+    print(final)
+    
+    
+def method2():
+    i,j,k=0,0,0
+    final = []
+    while(i<len(ar1) and j < len(ar2) and k <len(ar3)):
+        if(ar1[i]==ar2[j] and ar2[j]==ar3[k]):
+            final.append(ar1[i])
+            i+=1
+            k+=1
+            j+=1
+        elif ar1[i]<ar2[j]:
+            i+=1
+        elif ar2[j]<ar3[k]:
+            j+=1
+        else:
+            k+=1
+    return final
+            
+        
+print(method2())
